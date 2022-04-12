@@ -15,17 +15,41 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?'
+      message: 'What is your name?',
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter your name');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
       name: 'github',
-      message: 'Enter your GitHub username'
+      message: 'Enter your GitHub username',
+      validate: userInput => {
+        if (userInput) {
+          return true;
+        } else {
+          console.log('Please enter your GitHub username');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
       name: 'about',
-      message: 'Provide some information about yourself'
+      message: 'Provide some information about yourself',
+      validate: userInput => {
+        if (userInput) {
+          return true;
+        } else {
+          console.log('Please provide some information about yourself');
+          return false;
+        }
+      }
     }
   ])
 }
@@ -63,7 +87,15 @@ const promptProject = portfolioData => {
     {
       type: 'input',
       name: 'link',
-      message: 'Enter the GitHub link to your project. (Required)'
+      message: 'Enter the GitHub link to your project. (Required)',
+      validate: userInput => {
+        if (userInput) {
+          return true;
+        } else {
+          console.log('Please provide the GitHub link to your project');
+          return false;
+        }
+      }
     },
     {
       type: 'confirm',
